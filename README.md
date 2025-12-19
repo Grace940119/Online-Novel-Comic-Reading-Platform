@@ -3,6 +3,39 @@
 
 ---
 
+novel-comic-reading-system/
+│
+├─ README.md
+│
+├─ docs/                      # 📄 設計文件（老師最愛）
+│   ├─ SRS.md                 # 需求說明書
+│   ├─ HLD.md                 # 概要設計說明書
+│   ├─ DDD.md                 # 詳細設計說明書
+│   ├─ TestPlan.md            # 測試計畫
+│   └─ UML/
+│       ├─ use-case.png
+│       ├─ er-diagram.png
+│       ├─ system-architecture.png
+│       ├─ class-diagram.png
+│       └─ sequence-diagram.png
+│
+├─ frontend/                  # 前端
+│   ├─ index.html
+│   ├─ style.css
+│   └─ app.js
+│
+├─ backend/                   # 後端
+│   ├─ app.js
+│   ├─ routes/
+│   │   ├─ auth.js
+│   │   └─ works.js
+│   └─ db.js
+│
+└─ database/
+    └─ schema.sql
+
+---
+
 ## 小說／漫畫閱讀網站系統
 
 ---
