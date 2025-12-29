@@ -53,7 +53,8 @@
 
 ### 2.4 使用案例圖（Use Case Diagram）
 
-<img width="592" height="477" alt="Use Case Diagram" src="https://github.com/user-attachments/assets/afd507e3-5e4b-4fa4-985c-75bbd23ef438" />
+<img width="600" height="476" alt="Use Case Diagram" src="https://github.com/user-attachments/assets/0024acb7-41a9-4793-9843-d4fb4afc9031" />
+
 
 ---
 
@@ -64,7 +65,10 @@
 - 表現層（Frontend）
 - 應用層（Backend API）
 - 資料層（Database）
-<img width="591" height="277" alt="Three-Tier Architecture" src="https://github.com/user-attachments/assets/b6a83572-1624-4179-ac1d-78bda6ee5316" />
+
+<img width="638" height="601" alt="Three-Tier Architecture" src="https://github.com/user-attachments/assets/84725028-d4df-4c0a-8de0-1fb7c5244ba6" />
+
+
 
 ### 3.2模組劃分
 | 模組 | 說明 |
@@ -75,54 +79,56 @@
 | 收藏模組 | 書架、追蹤 |
 | 管理模組 | 後台管理功能 |
 
-### 3.3 系統元件圖
-<img width="592" height="396" alt="Component Diagram" src="https://github.com/user-attachments/assets/b2cc8bd6-aea8-48d6-80e1-9edf0b9fa5f2" />
+### 3.3 系統元件圖 （Component Diagram）
+
+<img width="603" height="432" alt="Component Diagram" src="https://github.com/user-attachments/assets/a62c500b-fc78-4873-b505-edb6b741bf32" />
 
 ---
 
 ## 四、詳細設計說明書（Detailed Design, DDD）
 
 ### 4.1 資料庫設計（ER Diagram）
-<img width="585" height="680" alt="ER Diagram" src="https://github.com/user-attachments/assets/9db5801e-cf52-4386-a82a-5a4d316b4ea4" />
+
+<img width="606" height="586" alt="ER Diagram" src="https://github.com/user-attachments/assets/0889dc90-4219-4690-aeb4-65feb31df9b1" />
+
+
+關聯說明
+
+- USER 1 ─── * BOOKMARK
+
+- USER 1 ─── * READING_PROGRESS
+
+- WORK 1 ─── * CHAPTER
+
+- WORK 1 ─── * BOOKMARK
 
 ### 4.2 閱讀流程（Sequence Diagram）
-<img width="595" height="257" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/1eb6ef5b-3fc7-404a-9f39-a8b7b30bc1ab" />
+
+<img width="605" height="457" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/a56fc008-a4c0-44ec-9e81-ac0d62876ce8" />
+
 
 ### 4.3 核心邏輯說明（範例）
-閱讀進度儲存邏輯：
-- 使用者閱讀章節
-- 系統定期或切換章節時紀錄頁碼
-- 儲存至 ReadingProgress 資料表
-- 下次開啟自動跳轉
+
+本系統以 Activity Diagram 描述閱讀進度儲存流程，如圖所示。
+圖中應包含節點：
+
+<img width="727" height="542" alt="閱讀進度儲存流程" src="https://github.com/user-attachments/assets/52e50c1d-53d4-4a0e-a10a-debc77299f6c" />
+
+
+
 
 ### 4.4 模組內部職責與設計說明
 
 本系統於詳細設計階段，將各功能模組的內部職責加以明確定義，以確保系統具備良好之可維護性與擴充性。
 
-#### （1）使用者模組（User Module）
-- 負責使用者註冊、登入與身分驗證流程
-- 控制不同角色（訪客、會員、管理員）之存取權限
-- 提供其他模組查詢使用者基本資料之介面
+<img width="638" height="577" alt="Class Diagram(1)" src="https://github.com/user-attachments/assets/97de46a0-28bd-4cc5-83b7-6887f0c28757" />
+<img width="642" height="595" alt="Class Diagram(2)" src="https://github.com/user-attachments/assets/88ef171e-9de8-48d4-8045-c7991120ffe1" />
 
-#### （2）內容模組（Content Module）
-- 管理小說與漫畫之基本資料（標題、類型、作者等）
-- 負責章節內容之新增、修改與刪除
-- 提供前端讀取章節清單與內容之服務介面
+模組關係說明
 
-#### （3）閱讀模組（Reading Module）
-- 負責處理使用者閱讀章節時的顯示邏輯
-- 記錄並更新使用者的閱讀進度
-- 當使用者重新進入作品時，自動載入上次閱讀位置
 
-#### （4）收藏模組（Bookmark Module）
-- 提供作品收藏與取消收藏功能
-- 管理使用者個人書架資料
-- 支援後續推薦或追蹤功能之擴充
+<img width="648" height="192" alt="Class Diagram(3)" src="https://github.com/user-attachments/assets/18856779-30a8-468c-8294-1d6480f6392f" />
 
-#### （5）管理模組（Admin Module）
-- 僅限管理者角色存取
-- 提供作品、章節與使用者之管理功能
-- 確保系統內容之正確性與完整性
 
 ### 4.5 詳細設計說明總結
 
@@ -130,6 +136,28 @@
 並搭配 ER Diagram 與 Sequence Diagram 說明資料結構與操作流程，
 可作為後續系統實作與維護之設計依據。
 
+### 4.6 收藏作品流程 — Sequence Diagram
+
+圖中角色：
+
+User
+
+Frontend
+
+BookmarkController
+
+BookmarkService
+
+Database
+
+
+<img width="725" height="465" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/a3afe91f-fcbe-44dd-8fce-8924e70daf9e" />
+
+
+
+### 4.7 管理員新增章節流程 — Activity Diagram
+
+<img width="637" height="617" alt="管理員新增章節流程" src="https://github.com/user-attachments/assets/9bfe81e9-313c-4a7e-91ca-5cfed229fd85" />
 
 ---
 
