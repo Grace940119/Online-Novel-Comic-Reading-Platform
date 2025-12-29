@@ -10,11 +10,10 @@
 ## 一、專案簡介
 
 ### 1. 專案目標
-建立一個可於瀏覽器上使用的閱讀平台，讓使用者能夠：
-- 線上閱讀小說與漫畫
-- 管理個人書架與閱讀進度
-- 進行作品搜尋、分類瀏覽與收藏
-- 提供管理者後台維護與內容管理
+
+<img width="378" height="737" alt="專案簡介" src="https://github.com/user-attachments/assets/f6416264-a2cc-400e-8c14-582b5ab871fb" />
+
+
 
 ### 2. 使用對象
 - 一般使用者（訪客 / 會員）
@@ -33,17 +32,14 @@
 
 ### 2.2 功能需求（Functional Requirements）
 #### 2.2.1 使用者功能
-- 使用者註冊 / 登入 / 登出
-- 瀏覽小說 / 漫畫列表
-- 依分類、作者、關鍵字搜尋
-- 章節閱讀（小說文字 / 漫畫圖片）
-- 自動記錄閱讀進度
-- 收藏作品至個人書架
+
+<img width="285" height="686" alt="使用者功能" src="https://github.com/user-attachments/assets/14590701-a08a-4783-9fa9-48cdfe9704fa" />
+
 
 #### 2.2.2 管理者功能
-- 新增 / 編輯 / 刪除作品
-- 上傳章節內容（文字 / 圖片）
-- 管理使用者帳號
+
+<img width="273" height="425" alt="管理者功能" src="https://github.com/user-attachments/assets/35ca1a1a-29d1-4c5c-b8bd-5a66d0d5f86f" />
+
 
 ### 2.3 非功能需求（Non-functional Requirements）
 - 效能：頁面載入時間 < 3 秒
@@ -53,10 +49,10 @@
 
 ### 2.4 使用案例圖（Use Case Diagram）
 
-<img width="600" height="476" alt="Use Case Diagram" src="https://github.com/user-attachments/assets/0024acb7-41a9-4793-9843-d4fb4afc9031" />
-
+<img width="442" height="642" alt="Use Case Diagram" src="https://github.com/user-attachments/assets/7359523c-ba5c-454d-9669-e0afb080736e" />
 
 ---
+
 
 ## 三、概要設計說明書（High-Level Design, HLD）
 
@@ -66,8 +62,7 @@
 - 應用層（Backend API）
 - 資料層（Database）
 
-<img width="638" height="601" alt="Three-Tier Architecture" src="https://github.com/user-attachments/assets/84725028-d4df-4c0a-8de0-1fb7c5244ba6" />
-
+<img width="3194" height="565" alt="Three-Tier Architecture" src="https://github.com/user-attachments/assets/a4e3cd87-fe17-458b-b30f-7218ecf59229" />
 
 
 ### 3.2模組劃分
@@ -81,7 +76,7 @@
 
 ### 3.3 系統元件圖 （Component Diagram）
 
-<img width="603" height="432" alt="Component Diagram" src="https://github.com/user-attachments/assets/a62c500b-fc78-4873-b505-edb6b741bf32" />
+<img width="2608" height="1570" alt="Component Diagram" src="https://github.com/user-attachments/assets/fac8fb14-c7cd-4590-adcd-62e0593d5765" />
 
 ---
 
@@ -89,22 +84,13 @@
 
 ### 4.1 資料庫設計（ER Diagram）
 
-<img width="606" height="586" alt="ER Diagram" src="https://github.com/user-attachments/assets/0889dc90-4219-4690-aeb4-65feb31df9b1" />
+<img width="5828" height="3673" alt="ER Diagram" src="https://github.com/user-attachments/assets/800a068d-26a0-49a2-bfb3-ffabec2ec58b" />
 
-
-關聯說明
-
-- USER 1 ─── * BOOKMARK
-
-- USER 1 ─── * READING_PROGRESS
-
-- WORK 1 ─── * CHAPTER
-
-- WORK 1 ─── * BOOKMARK
 
 ### 4.2 閱讀流程（Sequence Diagram）
 
-<img width="605" height="457" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/a56fc008-a4c0-44ec-9e81-ac0d62876ce8" />
+<img width="4250" height="2445" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/f828ad38-45e8-4ad0-8490-cac9cd5eefbf" />
+
 
 
 ### 4.3 核心邏輯說明（範例）
@@ -112,7 +98,8 @@
 本系統以 Activity Diagram 描述閱讀進度儲存流程，如圖所示。
 圖中應包含節點：
 
-<img width="727" height="542" alt="閱讀進度儲存流程" src="https://github.com/user-attachments/assets/52e50c1d-53d4-4a0e-a10a-debc77299f6c" />
+<img width="2062" height="5156" alt="閱讀進度儲存流程" src="https://github.com/user-attachments/assets/3bd08207-6541-4ca0-a25f-2fcbd6ed51d8" />
+
 
 
 
@@ -121,13 +108,8 @@
 
 本系統於詳細設計階段，將各功能模組的內部職責加以明確定義，以確保系統具備良好之可維護性與擴充性。
 
-<img width="638" height="577" alt="Class Diagram(1)" src="https://github.com/user-attachments/assets/97de46a0-28bd-4cc5-83b7-6887f0c28757" />
-<img width="642" height="595" alt="Class Diagram(2)" src="https://github.com/user-attachments/assets/88ef171e-9de8-48d4-8045-c7991120ffe1" />
+<img width="677" height="764" alt="模組內部職責與設計說明" src="https://github.com/user-attachments/assets/a530ac3b-862d-4001-84d1-4f4c13eb60d5" />
 
-模組關係說明
-
-
-<img width="648" height="192" alt="Class Diagram(3)" src="https://github.com/user-attachments/assets/18856779-30a8-468c-8294-1d6480f6392f" />
 
 
 ### 4.5 詳細設計說明總結
@@ -144,20 +126,20 @@ User
 
 Frontend
 
-BookmarkController
-
-BookmarkService
+Backend
 
 Database
 
 
-<img width="725" height="465" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/a3afe91f-fcbe-44dd-8fce-8924e70daf9e" />
+
+<img width="5165" height="3015" alt="收藏作品流程" src="https://github.com/user-attachments/assets/e5dcd25d-4737-4e5c-8279-bbd572d7a686" />
 
 
 
 ### 4.7 管理員新增章節流程 — Activity Diagram
 
-<img width="637" height="617" alt="管理員新增章節流程" src="https://github.com/user-attachments/assets/9bfe81e9-313c-4a7e-91ca-5cfed229fd85" />
+<img width="2141" height="6678" alt="管理者新增章節流程圖" src="https://github.com/user-attachments/assets/173bca98-e7bf-40d0-869f-87057f22359d" />
+
 
 ---
 
@@ -186,7 +168,7 @@ Database
 
 ## 六、專案目錄結構（規劃）
 
-<img width="593" height="226" alt="規劃" src="https://github.com/user-attachments/assets/f5a8a38f-48cb-44b7-856b-339862ce397e" />
+<img width="645" height="680" alt="規劃" src="https://github.com/user-attachments/assets/a346b0e6-e43b-4828-a582-5063a75131ee" />
 
 ---
 
